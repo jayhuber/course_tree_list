@@ -90,9 +90,8 @@ class block_course_tree_list extends block_base {
             return $this->content;
         }
 
-		// We will eventually do something with this - maybe
-		if (!isloggedin() or empty($USER->id)) {
-			//not logged in - display nothing?
+		if (!isloggedin() or empty($USER->id) or $USER->id == 1) {
+			//not logged in or logged in as guest - display nothing?
 		} else {
 		    if (!$courses = enrol_get_my_courses('numsections', 'visible DESC, fullname ASC')) {
 				$out .= "Not Enrolled in any courses";

@@ -48,7 +48,14 @@ Changelog
 v2012110800:
 - Initial Version
 
+v2012110900:
+- Disabled the block from displaying for guest accounts
+
+
 Release notes
 -------------
 v2012110800:
+- Release Canditate
+
+v2012110900:
 - Release Canditate
