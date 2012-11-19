@@ -26,7 +26,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2012110900;
+$plugin->version = 2012111900;
 $plugin->requires = 2012062500;
 $plugin->cron      = 0;
 $plugin->component = 'block_course_tree_list';
