@@ -1,4 +1,3 @@
-
 Readme file for the course-tree-access block
 =============================================
 
@@ -51,11 +50,17 @@ v2012110800:
 v2012110900:
 - Disabled the block from displaying for guest accounts
 
+v2012120600:
+-Modified block_course_tree_list.php for version 2.4 use as db field was removed.  
+-Added db/access.php file as required
 
 Release notes
 -------------
 v2012110800:
-- Release Canditate
+- Release Candidate
 
 v2012110900:
-- Release Canditate
+- Release Candidate
+
+v2012120600
+- Release Candidate

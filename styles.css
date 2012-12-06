@@ -39,7 +39,7 @@ ol.tree li input + ol {
 ol.tree li input + ol > li { display: none; margin-left: -14px !important; padding-left: 1px; }
 
 ol.tree li input:checked + ol {
-	background: url([[pix:t/switch_minus]]) 44px 3px no-repeat;
+	background: url([[pix:t/switch_minus]]) 44px 0px no-repeat;
 	margin: -15px 0 0 -44px; /* 20px */
 	padding: 15px 0 0 80px;
 	height: auto;

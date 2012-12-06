@@ -93,7 +93,14 @@ class block_course_tree_list extends block_base {
 		if (!isloggedin() or empty($USER->id) or $USER->id == 1) {
 			//not logged in or logged in as guest - display nothing?
 		} else {
-		    if (!$courses = enrol_get_my_courses('numsections', 'visible DESC, fullname ASC')) {
+			if ($CFG->version < 2012120300) {
+				//the numsections was moved in 2.4
+				$courses = enrol_get_my_courses('numsections', 'visible DESC, fullname ASC');
+			} else {
+				$courses = enrol_get_my_courses('', 'visible DESC, fullname ASC');
+			}
+
+		    if (!$courses) {
 				$out .= "Not Enrolled in any courses";
 		    } else {
 				$query = 'SELECT * FROM '.$CFG->prefix.'course_categories ORDER BY sortorder';
@@ -122,8 +129,16 @@ class block_course_tree_list extends block_base {
 				//determine if the category should be opened - must contain a course that is available 2 weeks before or 2 weeks after start and end dates
 				$one_week = 7*24*60*60;
 				foreach ($courses as $course) {
+					if ($CFG->version < 2012120300) {
+						$numsections = $course->numsections;
+					} else {
+						$sql = 'SELECT value FROM '.$CFG->prefix.'course_format_options WHERE courseid = '.$course->id.' AND name = \'numsections\'';
+						$rec = $DB->get_records_sql($sql);
+						$numsections = reset($rec)->value;
+					}
+					
 					$startdate = $course->startdate - ($one_week*$show_weeks_before);
-					$enddate = $course->startdate + ($one_week*($course->numsections+$show_weeks_after));
+					$enddate = $course->startdate + ($one_week*($numsections+$show_weeks_after));
 
 					if ((time() >= $startdate) && (time() <= $enddate)) {
 						//now update all the course categories to be displayed
