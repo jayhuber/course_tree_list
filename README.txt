@@ -54,8 +54,14 @@ v2012120600:
 -Modified block_course_tree_list.php for version 2.4 use as db field was removed.  
 -Added db/access.php file as required
 
+v2013011100:
+-Added IE detection to PHP code and cause selectivizer-min.js to load if version 8 or below
+
 Release notes
 -------------
+v2013011100:
+- Release Candidate
+
 v2012110800:
 - Release Candidate
 
