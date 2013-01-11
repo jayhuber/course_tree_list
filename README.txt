@@ -21,7 +21,7 @@ and after they complete.
 It builds a hierarchy collapsable/expandable menu based on the categories.
 The menu was designed entirely with CSS and does not use any javascript for its function.
 
-
+ 
 Code Location
 -------------
 You can always find the latest version at: https://github.com/jayhuber/course_tree_list
