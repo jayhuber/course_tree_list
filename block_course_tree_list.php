@@ -78,12 +78,44 @@ class block_course_tree_list extends block_base {
 
 	function get_content() {
 		global $CFG, $USER;
-		global $DB;
+		global $DB, $PAGE;
 
 		$show_weeks_before = get_config('course_tree_list', 'Weeks_Before');
 		$show_weeks_after = get_config('course_tree_list', 'Weeks_After');
-	
+
+		//need ie version
+		preg_match('/MSIE (.*?);/', $_SERVER['HTTP_USER_AGENT'], $matches);
+		$ie = 0;
+		if (count($matches)>1){
+		  //Then we're using IE
+		  $version = $matches[1];
+
+		  switch(true){
+		    case ($version<=8):
+				$ie = 8;
+		      //IE 8 or under!
+		      break;
+
+		    case ($version==9):
+				$ie = 0;
+		      //IE9!
+		      break;
+
+		    default:
+		      //You get the idea
+		  }
+		}
+
+		if ($ie == 8) {
+			$PAGE->requires->js( new moodle_url($CFG->wwwroot.'/blocks/course_tree_list/javascript/selectivizr-min.js') );
+		}
+
 		$out = "";
+
+
+
+	
+		
 		
         // Content has been computed before -> return content
         if ($this->content !== null) {

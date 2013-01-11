@@ -14,9 +14,10 @@ ol.tree li input {
 	position: absolute;
 	left: 0;
 	margin-left: 0;
-	opacity: 0;
 	z-index: 2;
 	cursor: pointer;
+	opacity: 0;
+	-ms-filter: "alpha(opacity=0)";
 	height: 1em;
 	width: 1em;
 	top: 0;
@@ -29,7 +30,6 @@ ol.tree li label {
 	overflow:hidden;
 	text-overflow: ellipsis;
 }
-
 ol.tree li input + ol {
 	background: url([[pix:t/switch_plus]]) 44px 3px no-repeat;
 	margin: -1.25em 0 0 -44px;
@@ -38,15 +38,16 @@ ol.tree li input + ol {
 }
 ol.tree li input + ol > li { display: none; margin-left: -14px !important; padding-left: 1px; }
 
-ol.tree li input:checked + ol {
+ol.tree li input:checked + ol,
+ol.tree li input.checked + ol
+ {
 	background: url([[pix:t/switch_minus]]) 44px 0px no-repeat;
 	margin: -15px 0 0 -44px; /* 20px */
 	padding: 15px 0 0 80px;
 	height: auto;
 }
+
+
+
 ol.tree li input:checked + ol > li { display: block; margin: 0 0 0.125em;  /* 2px */}
 ol.tree li input:checked + ol > li:last-child { margin: 0 0 0.063em; /* 1px */ }
-
-ol.tree li.course {
-	margin-left: -1px !important;
-}
