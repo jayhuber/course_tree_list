@@ -45,7 +45,7 @@ class block_course_tree_list extends block_base {
     * @return bool Returns true
     */
     function has_config() {
-        return false;
+        return true;
     }
     
     /*
@@ -82,41 +82,36 @@ class block_course_tree_list extends block_base {
 
 		$show_weeks_before = get_config('course_tree_list', 'Weeks_Before');
 		$show_weeks_after = get_config('course_tree_list', 'Weeks_After');
+		
+		//set a default value if one is not found in the tables - 2 weeks
+		if ($show_weeks_before == '') { $show_weeks_before = 2; }
+		if ($show_weeks_after == '') { $show_weeks_after = 2; }
 
 		//need ie version
 		preg_match('/MSIE (.*?);/', $_SERVER['HTTP_USER_AGENT'], $matches);
-		$ie = 0;
 		if (count($matches)>1){
 		  //Then we're using IE
 		  $version = $matches[1];
-
 		  switch(true){
 		    case ($version<=8):
+	      		//IE 8 or under!
 				$ie = 8;
-		      //IE 8 or under!
-		      break;
-
+		      	break;
 		    case ($version==9):
+		    	//IE9!
 				$ie = 0;
-		      //IE9!
-		      break;
-
+		      	break;
 		    default:
-		      //You get the idea
+				$ie = 0;
 		  }
 		}
 
+		$out = '';
 		if ($ie == 8) {
+			$out = '<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>';
 			$PAGE->requires->js( new moodle_url($CFG->wwwroot.'/blocks/course_tree_list/javascript/selectivizr-min.js') );
-		}
+		} 
 
-		$out = "";
-
-
-
-	
-		
-		
         // Content has been computed before -> return content
         if ($this->content !== null) {
             return $this->content;
@@ -166,9 +161,9 @@ class block_course_tree_list extends block_base {
 					} else {
 						$sql = 'SELECT value FROM '.$CFG->prefix.'course_format_options WHERE courseid = '.$course->id.' AND name = \'numsections\'';
 						$rec = $DB->get_records_sql($sql);
-						$numsections = reset($rec)->value;
+						$numsections = reset($rec)->value;	
 					}
-					
+
 					$startdate = $course->startdate - ($one_week*$show_weeks_before);
 					$enddate = $course->startdate + ($one_week*($numsections+$show_weeks_after));
 

@@ -19,7 +19,8 @@ settings to display active courses for x number of weeks before they start
 and after they complete.
 
 It builds a hierarchy collapsable/expandable menu based on the categories.
-The menu was designed entirely with CSS and does not use any javascript for its function.
+The menu was designed entirely with CSS, and works for all browsers except for IE 8 
+and below.  In that instance, javascript is a necessary evil.
 
  
 Code Location
@@ -56,6 +57,15 @@ v2012120600:
 
 v2013011100:
 -Added IE detection to PHP code and cause selectivizer-min.js to load if version 8 or below
+
+v2013011101:
+-Found has_config was set to false and should have been true.  Affecting Moodle 2.4 installs
+-Added 2 weeks as default value in case the Moodle config values are missing.
+-IE7 & 8 Fixes
+-The Previous version did not fix the IE problem, as my test environment had jquery running
+ causing selectivizr.js to work, which it will not with YUI.  Im not so good at YUI.  So,
+ the IE8 detect also adds the script from Google for jquery so this fix will now work.
+-Will need to revisit this fix in the future, but, it is good enough now.
 
 Release notes
 -------------
