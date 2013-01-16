@@ -104,7 +104,9 @@ class block_course_tree_list extends block_base {
 		    default:
 				$ie = 0;
 		  }
-		}
+		} else {
+            $ie = 0;
+        }
 
 		$out = '';
 		if ($ie == 8) {
