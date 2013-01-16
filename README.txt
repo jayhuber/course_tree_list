@@ -45,18 +45,10 @@ Currently, No Tables are created for the use of this block.
 
 Changelog
 ---------
-v2012110800:
-- Initial Version
-
-v2012110900:
-- Disabled the block from displaying for guest accounts
-
-v2012120600:
--Modified block_course_tree_list.php for version 2.4 use as db field was removed.  
--Added db/access.php file as required
-
-v2013011100:
--Added IE detection to PHP code and cause selectivizer-min.js to load if version 8 or below
+v2013011600:
+-Error with missing $ie variable causing other browsers beside Internet Explorer to display "undefined variable"
+-This fix is credited to Aleksandra Ferenz - Thank You!
+-Reversed the README list, so the recent change is at the top
 
 v2013011101:
 -Found has_config was set to false and should have been true.  Affecting Moodle 2.4 installs
@@ -67,8 +59,25 @@ v2013011101:
  the IE8 detect also adds the script from Google for jquery so this fix will now work.
 -Will need to revisit this fix in the future, but, it is good enough now.
 
+v2013011100:
+-Added IE detection to PHP code and cause selectivizer-min.js to load if version 8 or below
+
+v2012120600:
+-Modified block_course_tree_list.php for version 2.4 use as db field was removed.  
+-Added db/access.php file as required
+
+v2012110900:
+- Disabled the block from displaying for guest accounts
+
+v2012110800:
+- Initial Version
+
+
 Release notes
 -------------
+v2013011600
+- Release Candidate
+
 v2013011100:
 - Release Candidate
 
