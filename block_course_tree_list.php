@@ -211,6 +211,7 @@ class block_course_tree_list extends block_base {
 
 		}
 
+		$this->content = new stdClass;
 		$this->content->text = $out;
 		
 	}
