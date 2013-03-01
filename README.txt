@@ -5,7 +5,7 @@ A plugin for the learning management system moodle to provide individual
 course assortment for its users.
 
 - @package    block_course_tree_list
-- @copyright  2012 Jay Huber <jhuber@colum.edu>
+- @copyright  2013 Jay Huber <jhuber@colum.edu>
 - @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
 
 

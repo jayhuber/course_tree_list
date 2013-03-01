@@ -19,7 +19,7 @@
  * Contains administration settings options.
  *
  * @package    block_course_tree_list
- * @copyright  2012 Jay Huber <jhuber@colum.edu>
+ * @copyright  2013 Jay Huber <jhuber@colum.edu>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

@@ -20,7 +20,7 @@
  * Plugin versioning.
  *
  * @package    block_course_tree_list
- * @copyright  2012 Jay Huber <jhuber@colum.edu>
+ * @copyright  2013 Jay Huber <jhuber@colum.edu>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -31,4 +31,4 @@ $plugin->requires = 2011070100;
 $plugin->cron      = 0;
 $plugin->component = 'block_course_tree_list';
 $plugin->maturity = MATURITY_STABLE;
-$plugin->release   = '1.2.4 for Moodle 2.1+ (Build: 2013011600)';
+$plugin->release   = '1.2.4 for Moodle 2.1+ (Build: 2013022800)';
