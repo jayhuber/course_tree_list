@@ -72,9 +72,16 @@ v2012110900:
 v2012110800:
 - Initial Version
 
+v2013022800
+- Fixing Strict Warning
+- Upgrade Release to Stable
+
 
 Release notes
 -------------
+v2013022800
+- Stable Release
+
 v2013011600
 - Release Candidate
 
