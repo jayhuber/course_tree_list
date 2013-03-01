@@ -76,9 +76,14 @@ v2013022800
 - Fixing Strict Warning
 - Upgrade Release to Stable
 
+v2013030100
+- Last fix - caused reverse error in 2.3 or less so added branch check
 
 Release notes
 -------------
+v2013030100
+- Stable Release
+
 v2013022800
 - Stable Release
 

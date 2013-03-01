@@ -211,7 +211,10 @@ class block_course_tree_list extends block_base {
 
 		}
 
-		$this->content = new stdClass;
+		if ($CFG->branch > 23) {
+			//for 2.4 or higher only
+			$this->content = new stdClass;
+		}
 		$this->content->text = $out;
 		
 	}

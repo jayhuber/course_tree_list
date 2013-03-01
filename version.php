@@ -26,9 +26,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2013022800;
+$plugin->version = 2013030100;
 $plugin->requires = 2011070100;
 $plugin->cron      = 0;
 $plugin->component = 'block_course_tree_list';
 $plugin->maturity = MATURITY_STABLE;
-$plugin->release   = '1.2.4 for Moodle 2.1+ (Build: 2013022800)';
+$plugin->release   = '1.2.5 for Moodle 2.1+ (Build: 2013030100)';
