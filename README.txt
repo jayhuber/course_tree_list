@@ -45,6 +45,9 @@ Currently, No Tables are created for the use of this block.
 
 Changelog
 ---------
+v2013090900:
+- Fixed hardcoded string that should have been in language file.
+
 v2013011600:
 -Error with missing $ie variable causing other browsers beside Internet Explorer to display "undefined variable"
 -This fix is credited to Aleksandra Ferenz - Thank You!
@@ -81,6 +84,9 @@ v2013030100
 
 Release notes
 -------------
+v2013090900
+- Stable Release 
+
 v2013030100
 - Stable Release
 

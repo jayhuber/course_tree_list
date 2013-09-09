@@ -37,5 +37,4 @@ $string['weeksbefore'] = 'Weeks Before';
 $string['descweeksbefore'] = 'If a category contains a class, how many weeks before the class to default the category open.';
 $string['weeksafter'] = 'Weeks After';
 $string['descweeksafter'] = 'If a category contains a class, how many weeks after the class to default the category open.';
-
-
+$string['noenrollments'] = 'Not Enrolled in any courses';
